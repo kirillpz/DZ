@@ -9,7 +9,7 @@
 #include <sys/ioctl.h>
 #include <asm/ioctl.h>
 
-#define I2C_SLAVE	0x0703            
+#define I2C_SLAVE	  0x0703            
 #define I2C_SMBUS   0x0720           
 
 #define I2C_SMBUS_READ	1
