@@ -28,7 +28,7 @@
 #define BMP180_HIGHRES          2
 #define BMP180_ULTRAHIGHRES     3
 
-//BMP185 Registers
+//BMP180 Registers
 #define BMP180_CAL_AC1          0xAA  //Калибровочный регистр(16 bits)
 #define BMP180_CAL_AC2          0xAC  //Калибровочный регистр(16 bits)
 #define BMP180_CAL_AC3          0xAE  //Калибровочный регистр(16 bits)
@@ -86,7 +86,7 @@ static inline int i2c_smbus_access (int fd, char rw, uint8_t command, int size, 
 }
 
 
-//  Считывание 8-битного значения из регистратора на устройстве
+//Считывание 8-битного значения из регистратора на устройстве
 int I2CRead (int fd, int reg)
 {
   union i2c_smbus_data data;
@@ -98,7 +98,7 @@ int I2CRead (int fd, int reg)
 }
 
 
-// Запишите в данный регистр 8-или 16-битное значение
+//Запись 8-битных команд в регистр устройства
 int I2CWrite (int fd, int reg, int value)
 {
   union i2c_smbus_data data;
@@ -271,7 +271,7 @@ float read_altitude()
     altitude = 44330.0 * (1.0 - pow(pressure / sealevel_pa,(1.0/5.255)));
     return altitude;
 }
-// Рассчет давление на уровне моря
+// Рассчет давления на уровне моря
 float read_sealevel_pressure()
 {
     float altitude_m = 0.0;
